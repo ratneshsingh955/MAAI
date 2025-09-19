@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simple Android App</string>
+    <string name="back_to_main">Back to Main</string>
+    <string name="go_to_second_activity">Go to Second Activity</string>
+    <string name="second_activity_title">Second Activity</string>
+    <string name="welcome_message">Welcome to Main Activity!</string>
+    <style name="Base.Theme.SimpleAndroidApp" parent="Theme.Material3.DayNight">
+        
+        
+    </style>
+    <style name="Theme.SimpleAndroidApp" parent="Base.Theme.SimpleAndroidApp"/>
+</resources>

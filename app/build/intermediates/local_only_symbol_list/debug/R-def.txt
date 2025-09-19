@@ -1,0 +1,17 @@
+R_DEF: Internal format may change without notice
+local
+id btnBackToMain
+id btnGoToSecond
+id textView
+id textViewSecond
+layout activity_main
+layout activity_second
+string app_name
+string back_to_main
+string go_to_second_activity
+string second_activity_title
+string welcome_message
+style Base.Theme.SimpleAndroidApp
+style Theme.SimpleAndroidApp
+xml backup_rules
+xml data_extraction_rules

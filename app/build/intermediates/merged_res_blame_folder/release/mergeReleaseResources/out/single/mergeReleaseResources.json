@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-release-50:/layout_item_message_ai.xml.flat",
+        "source": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-main-51:/layout/item_message_ai.xml"
+    },
+    {
+        "merged": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-release-50:/xml_backup_rules.xml.flat",
+        "source": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-main-51:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-release-50:/drawable_circle_background.xml.flat",
+        "source": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-main-51:/drawable/circle_background.xml"
+    },
+    {
+        "merged": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-release-50:/drawable_ic_send.xml.flat",
+        "source": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-main-51:/drawable/ic_send.xml"
+    },
+    {
+        "merged": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-release-50:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-main-51:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-release-50:/layout_activity_welcome.xml.flat",
+        "source": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-main-51:/layout/activity_welcome.xml"
+    },
+    {
+        "merged": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-release-50:/layout_activity_sign_in.xml.flat",
+        "source": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-main-51:/layout/activity_sign_in.xml"
+    },
+    {
+        "merged": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-release-50:/layout_item_message_user.xml.flat",
+        "source": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-main-51:/layout/item_message_user.xml"
+    },
+    {
+        "merged": "com.ratnesh.singh.myai.app-release-50:/layout_activity_welcome.xml.flat",
+        "source": "com.ratnesh.singh.myai.app-main-51:/layout/activity_welcome.xml"
+    },
+    {
+        "merged": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-release-50:/drawable_ic_logout.xml.flat",
+        "source": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-main-51:/drawable/ic_logout.xml"
+    },
+    {
+        "merged": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-release-50:/menu_menu_welcome.xml.flat",
+        "source": "/Users/ratnesh.singh/.gradle/daemon/8.14.3/com.ratnesh.singh.myai.app-main-51:/menu/menu_welcome.xml"
+    }
+]

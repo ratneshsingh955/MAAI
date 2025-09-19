@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.7.2" type="partial_results">
+    <map id="UnsafeIntentLaunch">
+            <map id="unprotected">
+                <entry
+                    name="com.ratnesh.singh.myai.SignInActivity"
+                    boolean="true"/>
+            </map>
+    </map>
+    <map id="UnusedResources">
+        <location id="R.drawable.circle_background"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/circle_background.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="8"
+            endColumn="9"
+            endOffset="269"/>
+        <location id="R.string.sign_in_with_google"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="3"
+            column="13"
+            startOffset="66"
+            endLine="3"
+            endColumn="39"
+            endOffset="92"/>
+        <location id="R.string.sign_out"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="6"
+            column="13"
+            startOffset="281"
+            endLine="6"
+            endColumn="28"
+            endOffset="296"/>
+        <location id="R.string.welcome_message"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="5"
+            column="13"
+            startOffset="193"
+            endLine="5"
+            endColumn="35"
+            endOffset="215"/>
+        <location id="R.string.welcome_title"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="4"
+            column="13"
+            startOffset="134"
+            endLine="4"
+            endColumn="33"
+            endOffset="154"/>
+        <entry
+            name="model"
+            string="attr[colorOnPrimary(R),actionBarSize(R)],color[colorPrimary(U),white(U),light_gray(U),gray(U),black(U),colorPrimaryDark(U),colorAccent(U)],drawable[circle_background(D),ic_logout(U),ic_send(U)],id[ivLogo(U),tvAppName(U),tvWelcome(U),btnGoogleSignIn(U),progressBar(U),tvStatus(U),appBarLayout(U),toolbar(D),rvChatMessages(U),inputLayout(U),etMessageInput(U),btnSend(U),tvMessageText(U),action_sign_out(U)],layout[activity_sign_in(U),activity_welcome(U),item_message_ai(U),item_message_user(U)],menu[menu_welcome(U)],string[app_name(U),sign_in_with_google(D),welcome_title(D),welcome_message(D),sign_out(D),signing_in(U),sign_in_failed(U),sign_out_successful(U),default_web_client_id(U)],style[Theme_MyAi(U),Base_Theme_MyAi(U),Theme_Material3_DayNight(R)],xml[data_extraction_rules(U),backup_rules(U)];9^2^3,a^0,b^0,1a^4^1f^2^c^5^d^e^f^10,1b^4^2^1^1e^3^15^12^b,1c^3^6,1d^2^3,1e^a,28^29,29^2a^2^7^3^8;;;"/>
+    </map>
+
+</incidents>

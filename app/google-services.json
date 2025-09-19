@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1061433478899",
+    "project_id": "maai-d430d",
+    "storage_bucket": "maai-d430d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061433478899:android:43c6a1ed8b46d25515f186",
+        "android_client_info": {
+          "package_name": "com.ratnesh.singh.myai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061433478899-035mrn52nto1hocdnpq21aj5ssjj6q4f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ratnesh.singh.myai",
+            "certificate_hash": "6f9c16af35268cb8bcd5782f523b3590cec9d326"
+          }
+        },
+        {
+          "client_id": "1061433478899-lr1atr3fe4b7st59hs8mg1cktk1uonnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAob7vLLPSmBLHyUGGAe2Ck9icwSXSBAMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061433478899-lr1atr3fe4b7st59hs8mg1cktk1uonnj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

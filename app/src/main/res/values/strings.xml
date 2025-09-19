@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MAI</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="welcome_title">Welcome to MyAi!</string>
+    <string name="welcome_message">Hello, %s! You have successfully signed in.</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="signing_in">Signing in...</string>
+    <string name="sign_in_failed">Sign in failed. Please try again.</string>
+    <string name="sign_out_successful">Signed out successfully</string>
+    <string name="default_web_client_id">123456789012-abcdefghijklmnopqrstuvwxyz123456.apps.googleusercontent.com</string>
+</resources>
