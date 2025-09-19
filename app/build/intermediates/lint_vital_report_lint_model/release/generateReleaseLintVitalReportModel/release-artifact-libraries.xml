@@ -65,6 +65,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="com.github.bumptech.glide:glide:4.16.0@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/f5934dcd31eaf1299635ae37ae66ba76/transformed/glide-4.16.0/jars/classes.jar"
+      resolved="com.github.bumptech.glide:glide:4.16.0"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/f5934dcd31eaf1299635ae37ae66ba76/transformed/glide-4.16.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.viewpager2:viewpager2:1.0.0@aar"
       jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/22dd3880665c10869586392bb57ccba7/transformed/viewpager2-1.0.0/jars/classes.jar"
       resolved="androidx.viewpager2:viewpager2:1.0.0"
@@ -277,6 +290,19 @@
       jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/346a120f854819c50ccbdf719738f6d5/transformed/firebase-common-22.0.1/jars/classes.jar"
       resolved="com.google.firebase:firebase-common:22.0.1"
       folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/346a120f854819c50ccbdf719738f6d5/transformed/firebase-common-22.0.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.activity:activity:1.9.3@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/036a9cf1b7ad17f0fd637eef38c1122c/transformed/activity-1.9.3/jars/classes.jar"
+      resolved="androidx.activity:activity:1.9.3"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/036a9cf1b7ad17f0fd637eef38c1122c/transformed/activity-1.9.3"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -550,6 +576,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/d043bea5a84f925143447918f9d18dff/transformed/lifecycle-livedata-core-ktx-2.8.7/jars/classes.jar"
+      resolved="androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/d043bea5a84f925143447918f9d18dff/transformed/lifecycle-livedata-core-ktx-2.8.7"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7@aar"
       jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/a68402e42ebd15892513d395c2d37821/transformed/lifecycle-viewmodel-ktx-2.8.7/jars/classes.jar"
       resolved="androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7"
@@ -692,10 +731,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.fragment:fragment:1.5.7@aar"
-      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/08a4e1bfbfe999e1145f549162ebd856/transformed/fragment-1.5.7/jars/classes.jar"
-      resolved="androidx.fragment:fragment:1.5.7"
-      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/08a4e1bfbfe999e1145f549162ebd856/transformed/fragment-1.5.7"
+      name="androidx.fragment:fragment:1.7.0@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/6f51044ef6b0f32ab17f18375d5195d8/transformed/fragment-1.7.0/jars/classes.jar"
+      resolved="androidx.fragment:fragment:1.7.0"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/6f51044ef6b0f32ab17f18375d5195d8/transformed/fragment-1.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -705,10 +744,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.activity:activity:1.9.3@aar"
-      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/036a9cf1b7ad17f0fd637eef38c1122c/transformed/activity-1.9.3/jars/classes.jar"
-      resolved="androidx.activity:activity:1.9.3"
-      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/036a9cf1b7ad17f0fd637eef38c1122c/transformed/activity-1.9.3"
+      name="androidx.fragment:fragment-ktx:1.7.0@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/060e2544e3d530afa5f72d82ec4ea331/transformed/fragment-ktx-1.7.0/jars/classes.jar"
+      resolved="androidx.fragment:fragment-ktx:1.7.0"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/060e2544e3d530afa5f72d82ec4ea331/transformed/fragment-ktx-1.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -809,6 +848,84 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="io.noties.markwon:ext-tables:4.6.2@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/fb9aba609be94fcf6329da2b572ab1b2/transformed/ext-tables-4.6.2/jars/classes.jar"
+      resolved="io.noties.markwon:ext-tables:4.6.2"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/fb9aba609be94fcf6329da2b572ab1b2/transformed/ext-tables-4.6.2"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="io.noties.markwon:ext-strikethrough:4.6.2@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/3916fee991780abe37e8c3c16570104e/transformed/ext-strikethrough-4.6.2/jars/classes.jar"
+      resolved="io.noties.markwon:ext-strikethrough:4.6.2"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/3916fee991780abe37e8c3c16570104e/transformed/ext-strikethrough-4.6.2"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="io.noties.markwon:ext-tasklist:4.6.2@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/64e66365390371908af994a06190366c/transformed/ext-tasklist-4.6.2/jars/classes.jar"
+      resolved="io.noties.markwon:ext-tasklist:4.6.2"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/64e66365390371908af994a06190366c/transformed/ext-tasklist-4.6.2"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="io.noties.markwon:html:4.6.2@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/4317ad39baddaa0017517fdfab6e624c/transformed/html-4.6.2/jars/classes.jar"
+      resolved="io.noties.markwon:html:4.6.2"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/4317ad39baddaa0017517fdfab6e624c/transformed/html-4.6.2"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="io.noties.markwon:linkify:4.6.2@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/b11ae4d742dfbad7998011fc69bfc00c/transformed/linkify-4.6.2/jars/classes.jar"
+      resolved="io.noties.markwon:linkify:4.6.2"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/b11ae4d742dfbad7998011fc69bfc00c/transformed/linkify-4.6.2"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="io.noties.markwon:core:4.6.2@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/1021d351a366a403668e178dfc2db53f/transformed/core-4.6.2/jars/classes.jar"
+      resolved="io.noties.markwon:core:4.6.2"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/1021d351a366a403668e178dfc2db53f/transformed/core-4.6.2"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.cursoradapter:cursoradapter:1.0.0@aar"
       jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/837f99841929f84ac44bd5cb928a0895/transformed/cursoradapter-1.0.0/jars/classes.jar"
       resolved="androidx.cursoradapter:cursoradapter:1.0.0"
@@ -848,6 +965,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="com.github.bumptech.glide:gifdecoder:4.16.0@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/8b8620cc83e60a6193646651996e9aff/transformed/gifdecoder-4.16.0/jars/classes.jar"
+      resolved="com.github.bumptech.glide:gifdecoder:4.16.0"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/8b8620cc83e60a6193646651996e9aff/transformed/gifdecoder-4.16.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"
       jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/2048389023987581c7fac067c14416de/transformed/versionedparcelable-1.1.1/jars/classes.jar"
       resolved="androidx.versionedparcelable:versionedparcelable:1.1.1"
@@ -860,6 +990,10 @@
       symbolFile="R.txt"
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
+  <library
+      name="androidx.collection:collection-ktx:1.4.2@jar"
+      jars="/Users/ratnesh.singh/.gradle/caches/modules-2/files-2.1/androidx.collection/collection-ktx/1.4.2/2ad14aed781c4a73ed4dbb421966d408a0a06686/collection-ktx-1.4.2.jar"
+      resolved="androidx.collection:collection-ktx:1.4.2"/>
   <library
       name="androidx.collection:collection-jvm:1.4.2@jar"
       jars="/Users/ratnesh.singh/.gradle/caches/modules-2/files-2.1/androidx.collection/collection-jvm/1.4.2/bc60b5568a66d765a9fe8e266fd0c6c727e0b50b/collection-jvm-1.4.2.jar"
@@ -941,6 +1075,19 @@
       jars="/Users/ratnesh.singh/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"
       resolved="com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava"/>
   <library
+      name="androidx.tracing:tracing:1.2.0@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/62d637948fe9c84064f72d7226b8f308/transformed/tracing-1.2.0/jars/classes.jar"
+      resolved="androidx.tracing:tracing:1.2.0"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/62d637948fe9c84064f72d7226b8f308/transformed/tracing-1.2.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.resourceinspection:resourceinspection-annotation:1.0.1@jar"
       jars="/Users/ratnesh.singh/.gradle/caches/modules-2/files-2.1/androidx.resourceinspection/resourceinspection-annotation/1.0.1/8c21f8ff5d96d5d52c948707f7e4d6ca6773feef/resourceinspection-annotation-1.0.1.jar"
       resolved="androidx.resourceinspection:resourceinspection-annotation:1.0.1"/>
@@ -994,6 +1141,39 @@
       name="com.google.j2objc:j2objc-annotations:1.3@jar"
       jars="/Users/ratnesh.singh/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar"
       resolved="com.google.j2objc:j2objc-annotations:1.3"/>
+  <library
+      name="com.atlassian.commonmark:commonmark-ext-gfm-tables:0.13.0@jar"
+      jars="/Users/ratnesh.singh/.gradle/caches/modules-2/files-2.1/com.atlassian.commonmark/commonmark-ext-gfm-tables/0.13.0/c3a5ba4217cacc7833c697e5081da42ae996655f/commonmark-ext-gfm-tables-0.13.0.jar"
+      resolved="com.atlassian.commonmark:commonmark-ext-gfm-tables:0.13.0"/>
+  <library
+      name="com.atlassian.commonmark:commonmark-ext-gfm-strikethrough:0.13.0@jar"
+      jars="/Users/ratnesh.singh/.gradle/caches/modules-2/files-2.1/com.atlassian.commonmark/commonmark-ext-gfm-strikethrough/0.13.0/60c7582b118a9c47e859544df04da88cf1282eaf/commonmark-ext-gfm-strikethrough-0.13.0.jar"
+      resolved="com.atlassian.commonmark:commonmark-ext-gfm-strikethrough:0.13.0"/>
+  <library
+      name="com.atlassian.commonmark:commonmark:0.13.0@jar"
+      jars="/Users/ratnesh.singh/.gradle/caches/modules-2/files-2.1/com.atlassian.commonmark/commonmark/0.13.0/d233ad1436f35c7f88e3488ce6c1e65425c1a059/commonmark-0.13.0.jar"
+      resolved="com.atlassian.commonmark:commonmark:0.13.0"/>
+  <library
+      name="com.github.bumptech.glide:disklrucache:4.16.0@jar"
+      jars="/Users/ratnesh.singh/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/disklrucache/4.16.0/411aa175d50d10b37c7a1a04d21a4e7145249557/disklrucache-4.16.0.jar"
+      resolved="com.github.bumptech.glide:disklrucache:4.16.0"/>
+  <library
+      name="com.github.bumptech.glide:annotations:4.16.0@jar"
+      jars="/Users/ratnesh.singh/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/annotations/4.16.0/90730f6498299d207aa0878124ab7585969808f0/annotations-4.16.0.jar"
+      resolved="com.github.bumptech.glide:annotations:4.16.0"/>
+  <library
+      name="androidx.exifinterface:exifinterface:1.3.6@aar"
+      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/398775600b50603691c0a13ba6d6d725/transformed/exifinterface-1.3.6/jars/classes.jar"
+      resolved="androidx.exifinterface:exifinterface:1.3.6"
+      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/398775600b50603691c0a13ba6d6d725/transformed/exifinterface-1.3.6"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
   <library
       name="androidx.emoji2:emoji2-views-helper:1.3.0@aar"
       jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/20e7834c4a9bd50f7b49d0b85f7e9da0/transformed/emoji2-views-helper-1.3.0/jars/classes.jar"
@@ -1195,19 +1375,6 @@
       jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/0731bb9b9184441dcefb855e76d11a1a/transformed/startup-runtime-1.1.1/jars/classes.jar"
       resolved="androidx.startup:startup-runtime:1.1.1"
       folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/0731bb9b9184441dcefb855e76d11a1a/transformed/startup-runtime-1.1.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.tracing:tracing:1.2.0@aar"
-      jars="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/62d637948fe9c84064f72d7226b8f308/transformed/tracing-1.2.0/jars/classes.jar"
-      resolved="androidx.tracing:tracing:1.2.0"
-      folder="/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/62d637948fe9c84064f72d7226b8f308/transformed/tracing-1.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

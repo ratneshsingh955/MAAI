@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MAI</string>
+    <string name="app_name">MAAI</string>
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="welcome_title">Welcome to MyAi!</string>
     <string name="welcome_message">Hello, %s! You have successfully signed in.</string>

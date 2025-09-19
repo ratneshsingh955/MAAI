@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ratnesh.singh.myai.app-mergeReleaseResources-48:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.ratnesh.singh.myai.app-mergeReleaseResources-53:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/e139d0d9a61a2226327843ec63c92928/transformed/play-services-auth-21.2.0/res/values-watch-v20/values.xml",

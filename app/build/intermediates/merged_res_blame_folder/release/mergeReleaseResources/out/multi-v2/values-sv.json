@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ratnesh.singh.myai.app-mergeReleaseResources-48:/values-sv/values-sv.xml",
+            "outputFile": "com.ratnesh.singh.myai.app-mergeReleaseResources-53:/values-sv/values-sv.xml",
             "map": [
                 {
                     "source": "/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/1760f9a6d3a38cabae08b0645fb3e37f/transformed/play-services-base-18.5.0/res/values-sv/values.xml",

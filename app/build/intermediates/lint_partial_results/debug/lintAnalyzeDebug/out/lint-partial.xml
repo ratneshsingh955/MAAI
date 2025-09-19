@@ -8,6 +8,54 @@
             </map>
     </map>
     <map id="UnusedResources">
+        <location id="R.anim.message_enter_animation"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/anim/message_enter_animation.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="22"
+            endColumn="7"
+            endOffset="587"/>
+        <location id="R.color.colorAccent"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="5"
+            column="12"
+            startOffset="160"
+            endLine="5"
+            endColumn="30"
+            endOffset="178"/>
+        <location id="R.color.on_surface"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="14"
+            column="12"
+            startOffset="548"
+            endLine="14"
+            endColumn="29"
+            endOffset="565"/>
+        <location id="R.color.on_surface_variant"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="15"
+            column="12"
+            startOffset="593"
+            endLine="15"
+            endColumn="37"
+            endOffset="618"/>
+        <location id="R.color.surface"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="12"
+            column="12"
+            startOffset="456"
+            endLine="12"
+            endColumn="26"
+            endOffset="470"/>
+        <location id="R.color.surface_variant"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="13"
+            column="12"
+            startOffset="498"
+            endLine="13"
+            endColumn="34"
+            endOffset="520"/>
         <location id="R.drawable.circle_background"
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/circle_background.xml"
             line="2"
@@ -16,6 +64,22 @@
             endLine="8"
             endColumn="9"
             endOffset="269"/>
+        <location id="R.drawable.ic_send"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_send.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="10"
+            endColumn="10"
+            endOffset="352"/>
+        <location id="R.drawable.send_button_background"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/send_button_background.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="11"
+            endColumn="9"
+            endOffset="352"/>
         <location id="R.string.sign_in_with_google"
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
             line="3"
@@ -48,9 +112,17 @@
             endLine="4"
             endColumn="33"
             endOffset="154"/>
+        <location id="R.style.Base_Theme_MyAi"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/themes.xml"
+            line="3"
+            column="12"
+            startOffset="107"
+            endLine="3"
+            endColumn="34"
+            endOffset="129"/>
         <entry
             name="model"
-            string="attr[colorOnPrimary(R),actionBarSize(R)],color[colorPrimary(U),white(U),light_gray(U),gray(U),black(U),colorPrimaryDark(U),colorAccent(U)],drawable[circle_background(D),ic_logout(U),ic_send(U)],id[ivLogo(U),tvAppName(U),tvWelcome(U),btnGoogleSignIn(U),progressBar(U),tvStatus(U),appBarLayout(U),toolbar(D),rvChatMessages(U),inputLayout(U),etMessageInput(U),btnSend(U),tvMessageText(U),action_sign_out(U)],layout[activity_sign_in(U),activity_welcome(U),item_message_ai(U),item_message_user(U)],menu[menu_welcome(U)],string[app_name(U),sign_in_with_google(D),welcome_title(D),welcome_message(D),sign_out(D),signing_in(U),sign_in_failed(U),sign_out_successful(U),default_web_client_id(U)],style[Theme_MyAi(U),Base_Theme_MyAi(U),Theme_Material3_DayNight(R)],xml[data_extraction_rules(U),backup_rules(U)];9^2^3,a^0,b^0,1a^4^1f^2^c^5^d^e^f^10,1b^4^2^1^1e^3^15^12^b,1c^3^6,1d^2^3,1e^a,28^29,29^2a^2^7^3^8;;;"/>
+            string="anim[message_enter_animation(D)],attr[colorOnSurface(R),colorOnPrimary(R)],color[colorPrimary(U),white(U),colorPrimaryDark(U),black(U),light_gray(U),gray(U),gray_600(U),gray_200(U),colorAccent(D),surface(D),surface_variant(D),on_surface(D),on_surface_variant(D)],drawable[circle_background(D),gradient_background(U),ic_attachment(U),ic_close(U),ic_logout(U),ic_send(D),ic_send_modern(U),send_button_background(D),send_button_ripple(U)],id[ivFullImage(U),btnClose(U),ivLogo(U),tvAppName(U),tvWelcome(U),btnGoogleSignIn(U),progressBar(U),tvStatus(U),appBarLayout(U),rvChatMessages(U),inputLayout(U),btnAttachment(U),etMessageInput(U),btnSend(U),tvMessageText(U),ivMessageImage(U),action_sign_out(U)],layout[activity_image_viewer(U),activity_sign_in(U),activity_welcome(U),item_message_ai(U),item_message_ai_image(U),item_message_user(U),item_message_user_image(U)],menu[menu_welcome(U)],string[app_name(U),sign_in_with_google(D),welcome_title(D),welcome_message(D),sign_out(D),signing_in(U),sign_in_failed(U),sign_out_successful(U),default_web_client_id(U)],style[Theme_MyAi(U),Theme_MyAi_NoActionBar(U),Base_Theme_MyAi(D),Theme_Material3_DayNight(R),Theme_Material3_DayNight_NoActionBar(R)],xml[data_extraction_rules(U),backup_rules(U)];10^3^4,12^1,13^4,14^2,15^2,16^2,17^3^5,18^5^3,2a^6^18^13,2b^7^32^3^1b^8^1c^1d^1e^1f,2c^11^3^23^21^18^12^6^9^16,2d^4^a^6,2e^a^6,2f^3^4,30^a^4,31^14,3b^3e,3c^3f,3d^3e^3^5^4^b;;;"/>
     </map>
 
 </incidents>

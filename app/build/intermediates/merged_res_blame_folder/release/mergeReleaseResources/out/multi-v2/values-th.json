@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ratnesh.singh.myai.app-mergeReleaseResources-48:/values-th/values-th.xml",
+            "outputFile": "com.ratnesh.singh.myai.app-mergeReleaseResources-53:/values-th/values-th.xml",
             "map": [
                 {
                     "source": "/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/6de5c262adfce1f13658469834842f9c/transformed/browser-1.4.0/res/values-th/values-th.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ratnesh.singh.myai.app-mergeDebugResources-48:/values-ko/values-ko.xml",
+            "outputFile": "com.ratnesh.singh.myai.app-mergeDebugResources-53:/values-ko/values-ko.xml",
             "map": [
                 {
                     "source": "/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/2108182b2c1231e4864b178bd5245195/transformed/appcompat-1.7.0/res/values-ko/values-ko.xml",

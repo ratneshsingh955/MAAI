@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ratnesh.singh.myai.app-mergeReleaseResources-48:/values-v23/values-v23.xml",
+            "outputFile": "com.ratnesh.singh.myai.app-mergeReleaseResources-53:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/2ec4ec57a2bff0eb5114a65a85cef36c/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",

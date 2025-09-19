@@ -1,10 +1,13 @@
 package com.ratnesh.singh.myai
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +16,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.ratnesh.singh.myai.adapter.ChatAdapter
 import com.ratnesh.singh.myai.ai.GeminiFireBaseAiService
 import com.ratnesh.singh.myai.model.Message
+import io.noties.markwon.Markwon
+import io.noties.markwon.ext.tables.TablePlugin
+import io.noties.markwon.ext.strikethrough.StrikethroughPlugin
+import io.noties.markwon.ext.tasklist.TaskListPlugin
+import io.noties.markwon.html.HtmlPlugin
+import io.noties.markwon.linkify.LinkifyPlugin
 import kotlinx.coroutines.launch
 
 class WelcomeActivity : AppCompatActivity() {
@@ -21,6 +30,15 @@ class WelcomeActivity : AppCompatActivity() {
     private lateinit var geminiService: GeminiFireBaseAiService
     private lateinit var chatAdapter: ChatAdapter
     private lateinit var etMessageInput: TextInputEditText
+    private lateinit var markwon: Markwon
+    
+    private val imagePickerLauncher = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { uri: Uri? ->
+        uri?.let { selectedImageUri ->
+            handleImageSelection(selectedImageUri)
+        }
+    }
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +47,7 @@ class WelcomeActivity : AppCompatActivity() {
         initializeViews()
         setupFirebaseAuth()
         setupGeminiService()
+        setupMarkwon()
         setupRecyclerView()
         setupClickListeners()
         addWelcomeMessage()
@@ -46,18 +65,60 @@ class WelcomeActivity : AppCompatActivity() {
         geminiService = GeminiFireBaseAiService()
     }
     
+    private fun setupMarkwon() {
+        markwon = Markwon.builder(this)
+            .usePlugin(TablePlugin.create(this))
+            .usePlugin(StrikethroughPlugin.create())
+            .usePlugin(TaskListPlugin.create(this))
+            .usePlugin(HtmlPlugin.create())
+            .usePlugin(LinkifyPlugin.create())
+            .build()
+    }
+    
     private fun setupRecyclerView() {
-        chatAdapter = ChatAdapter()
+        chatAdapter = ChatAdapter(markwon)
         val recyclerView = findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.rvChatMessages)
         recyclerView.apply {
             layoutManager = LinearLayoutManager(this@WelcomeActivity)
             adapter = chatAdapter
         }
+        // Set the recyclerView reference in the adapter for auto-scrolling
+        chatAdapter.setRecyclerView(recyclerView)
     }
     
     private fun setupClickListeners() {
-        findViewById<com.google.android.material.button.MaterialButton>(R.id.btnSend).setOnClickListener {
+        findViewById<ImageButton>(R.id.btnSend).setOnClickListener {
+            // Add button press animation
+            it.animate()
+                .scaleX(0.9f)
+                .scaleY(0.9f)
+                .setDuration(100)
+                .withEndAction {
+                    it.animate()
+                        .scaleX(1.0f)
+                        .scaleY(1.0f)
+                        .setDuration(100)
+                        .start()
+                }
+                .start()
             sendMessage()
+        }
+        
+        findViewById<ImageButton>(R.id.btnAttachment).setOnClickListener {
+            // Add button press animation
+            it.animate()
+                .scaleX(0.9f)
+                .scaleY(0.9f)
+                .setDuration(100)
+                .withEndAction {
+                    it.animate()
+                        .scaleX(1.0f)
+                        .scaleY(1.0f)
+                        .setDuration(100)
+                        .start()
+                }
+                .start()
+            openImagePicker()
         }
         
         etMessageInput.setOnEditorActionListener { _, _, _ ->
@@ -72,6 +133,35 @@ class WelcomeActivity : AppCompatActivity() {
             isFromUser = false
         )
         chatAdapter.addMessage(welcomeMessage)
+    }
+    
+    private fun openImagePicker() {
+        imagePickerLauncher.launch("image/*")
+    }
+    
+    private fun handleImageSelection(imageUri: Uri) {
+        val messageText = etMessageInput.text?.toString()?.trim() ?: ""
+        
+        // Add user message with image to chat
+        val userMessage = Message(
+            text = if (messageText.isNotEmpty()) messageText else "Image",
+            isFromUser = true,
+            imageUri = imageUri
+        )
+        chatAdapter.addMessage(userMessage)
+        
+        // Clear input
+        etMessageInput.text?.clear()
+        
+        // Show typing indicator
+        val typingMessage = Message(
+            text = "AI is analyzing the image...",
+            isFromUser = false
+        )
+        chatAdapter.addMessage(typingMessage)
+        
+        // Generate AI response for image
+        generateAIResponseForImage(messageText, imageUri)
     }
     
     private fun sendMessage() {
@@ -133,6 +223,49 @@ class WelcomeActivity : AppCompatActivity() {
                 // Add error message
                 val errorMessage = Message(
                     text = "Sorry, I encountered an error. Please try again.",
+                    isFromUser = false
+                )
+                chatAdapter.addMessage(errorMessage)
+                
+                Toast.makeText(this@WelcomeActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+    
+    private fun generateAIResponseForImage(userMessage: String, imageUri: Uri) {
+        lifecycleScope.launch {
+            try {
+                val aiResponse = geminiService.generateTextWithImage(userMessage, imageUri, this@WelcomeActivity)
+                
+                // Remove typing indicator
+                val messages = chatAdapter.messages.toMutableList()
+                if (messages.isNotEmpty() && messages.last().text == "AI is analyzing the image...") {
+                    messages.removeAt(messages.size - 1)
+                    chatAdapter.messages.clear()
+                    chatAdapter.messages.addAll(messages)
+                    chatAdapter.notifyDataSetChanged()
+                }
+                
+                // Add AI response
+                val aiMessage = Message(
+                    text = aiResponse,
+                    isFromUser = false
+                )
+                chatAdapter.addMessage(aiMessage)
+                
+            } catch (e: Exception) {
+                // Remove typing indicator
+                val messages = chatAdapter.messages.toMutableList()
+                if (messages.isNotEmpty() && messages.last().text == "AI is analyzing the image...") {
+                    messages.removeAt(messages.size - 1)
+                    chatAdapter.messages.clear()
+                    chatAdapter.messages.addAll(messages)
+                    chatAdapter.notifyDataSetChanged()
+                }
+                
+                // Add error message
+                val errorMessage = Message(
+                    text = "Sorry, I couldn't analyze the image. Please try again.",
                     isFromUser = false
                 )
                 chatAdapter.addMessage(errorMessage)

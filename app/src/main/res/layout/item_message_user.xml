@@ -5,23 +5,34 @@
     android:layout_height="wrap_content"
     android:gravity="end"
     android:orientation="horizontal"
-    android:padding="8dp">
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         app:cardBackgroundColor="@color/colorPrimary"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="2dp">
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
+        app:strokeWidth="0dp">
 
         <TextView
             android:id="@+id/tvMessageText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:lineSpacingExtra="2dp"
+            android:fontFamily="sans-serif" />
 
     </com.google.android.material.card.MaterialCardView>
 

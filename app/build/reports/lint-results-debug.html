@@ -177,22 +177,24 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 25 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 1 error and 44 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Sep 19 22:46:01 IST 2025 by AGP (8.7.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Sep 19 23:31:00 IST 2025 by AGP (8.7.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (10)</a>
-      <a class="mdl-navigation__link" href="#NotifyDataSetChanged"><i class="material-icons warning-icon">warning</i>Invalidating All RecyclerView Data (2)</a>
+      <a class="mdl-navigation__link" href="#ScopedStorage"><i class="material-icons warning-icon">warning</i>Affected by scoped storage (1)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (12)</a>
+      <a class="mdl-navigation__link" href="#PermissionImpliesUnsupportedChromeOsHardware"><i class="material-icons error-icon">error</i>Permission Implies Unsupported Chrome OS Hardware (1)</a>
+      <a class="mdl-navigation__link" href="#NotifyDataSetChanged"><i class="material-icons warning-icon">warning</i>Invalidating All RecyclerView Data (4)</a>
       <a class="mdl-navigation__link" href="#Overdraw"><i class="material-icons warning-icon">warning</i>Overdraw: Painting regions more than once (2)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (5)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (14)</a>
       <a class="mdl-navigation__link" href="#TypographyEllipsis"><i class="material-icons warning-icon">warning</i>Ellipsis string can be replaced with ellipsis character (1)</a>
       <a class="mdl-navigation__link" href="#ContentDescription"><i class="material-icons warning-icon">warning</i>Image without <code>contentDescription</code> (1)</a>
-      <a class="mdl-navigation__link" href="#HardcodedText"><i class="material-icons warning-icon">warning</i>Hardcoded text (4)</a>
+      <a class="mdl-navigation__link" href="#HardcodedText"><i class="material-icons warning-icon">warning</i>Hardcoded text (9)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -208,18 +210,26 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
 <tr>
-<td class="countColumn">10</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#ScopedStorage">ScopedStorage</a>: Affected by scoped storage</td></tr>
+<tr>
+<td class="countColumn">12</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness:Chrome OS">Correctness:Chrome OS</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
+<a href="#PermissionImpliesUnsupportedChromeOsHardware">PermissionImpliesUnsupportedChromeOsHardware</a>: Permission Implies Unsupported Chrome OS Hardware</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
-<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#NotifyDataSetChanged">NotifyDataSetChanged</a>: Invalidating All RecyclerView Data</td></tr>
 <tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#Overdraw">Overdraw</a>: Overdraw: Painting regions more than once</td></tr>
 <tr>
-<td class="countColumn">5</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">14</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Typography">Usability:Typography</a>
 </td></tr>
@@ -234,7 +244,7 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Internationalization">Internationalization</a>
 </td></tr>
 <tr>
-<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">9</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#HardcodedText">HardcodedText</a>: Hardcoded text</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (30)</a>
 </td></tr>
@@ -248,7 +258,63 @@ Dismiss</button>            </div>
             </div>
           </section>
 <a name="Correctness"></a>
-<a name="GradleDependency"></a>
+<a name="ScopedStorage"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ScopedStorageCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Affected by scoped storage</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:7</span>: <span class="message">READ_EXTERNAL_STORAGE is deprecated (and is not granted) when targeting Android 13+. If you need to query or interact with MediaStore or media files on the shared storage, you should instead use one or more new storage permissions: <code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code> or <code>READ_MEDIA_AUDIO</code>.</span><br /><pre class="errorlines">
+<span class="lineno">  4 </span>
+<span class="lineno">  5 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.INTERNET"</span> />
+<span class="lineno">  6 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.ACCESS_NETWORK_STATE"</span> />
+<span class="caretline"><span class="lineno">  7 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"</span><span class="warning"><span class="value">android.permission.READ_EXTERNAL_STORAGE</span></span><span class="value">"</span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  8 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.CAMERA"</span> />
+<span class="lineno">  9 </span>
+<span class="lineno"> 10 </span>    <span class="tag">&lt;application</span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationScopedStorage" style="display: none;">
+Scoped storage is enforced on Android 10+ (or Android 11+ if using <code>requestLegacyExternalStorage</code>). In particular, <code>WRITE_EXTERNAL_STORAGE</code> will no longer provide write access to all files; it will provide the equivalent of <code>READ_EXTERNAL_STORAGE</code> instead.<br/>
+<br/>
+As of Android 13, if you need to query or interact with MediaStore or media files on the shared storage, you should be using instead one or more new storage permissions:<br/>
+* <code>android.permission.READ_MEDIA_IMAGES</code><br/>
+* <code>android.permission.READ_MEDIA_VIDEO</code><br/>
+* <code>android.permission.READ_MEDIA_AUDIO</code><br/>
+<br/>
+and then add <code>maxSdkVersion="33"</code> to the older permission. See the developer guide for how to do this: <a href="https://developer.android.com/about/versions/13/behavior-changes-13#granular-media-permissions">https://developer.android.com/about/versions/13/behavior-changes-13#granular-media-permissions</a><br/>
+<br/>
+The <code>MANAGE_EXTERNAL_STORAGE</code> permission can be used to manage all files, but it is rarely necessary and most apps on Google Play are not allowed to use it. Most apps should instead migrate to use scoped storage. To modify or delete files, apps should request write access from the user as described at <a href="https://goo.gle/android-mediastore-createwriterequest">https://goo.gle/android-mediastore-createwriterequest</a>.<br/>
+<br/>
+To learn more, read these resources: Play policy: <a href="https://goo.gle/policy-storage-help">https://goo.gle/policy-storage-help</a> Allowable use cases: <a href="https://goo.gle/policy-storage-usecases">https://goo.gle/policy-storage-usecases</a><br/><div class="moreinfo">More info: <a href="https://goo.gle/android-storage-usecases">https://goo.gle/android-storage-usecases</a>
+</div>To suppress this error, use the issue id "ScopedStorage" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">ScopedStorage</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 8/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationScopedStorageLink" onclick="reveal('explanationScopedStorage');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ScopedStorageCardLink" onclick="hideid('ScopedStorageCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="GradleDependency"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="GradleDependencyCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
@@ -303,7 +369,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 46 </span>    implementation platform(<span class="string">'com.google.firebase:firebase-bom:34.3.0'</span>)
 <span class="lineno"> 47 </span>    implementation <span class="string">'com.google.firebase:firebase-analytics'</span></pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 5 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 7 More Occurrences...</button>
 <div id="GradleDependencyDiv" style="display: none">
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:45</span>: <span class="message">A newer version of com.google.firebase:firebase-auth than 23.0.0 is available: 24.0.1</span><br /><pre class="errorlines">
 <span class="lineno"> 42 </span>    
@@ -339,15 +405,33 @@ Dismiss</button>            </div>
 <span class="lineno"> 54 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
 <span class="caretline"><span class="lineno"> 55 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.ext:junit:1.2.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 56 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.6.1'</span>
-<span class="lineno"> 57 </span>}
-</pre>
+<span class="lineno"> 57 </span>
+<span class="lineno"> 58 </span>    implementation <span class="string">'io.noties.markwon:core:4.6.2'</span></pre>
 
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:56</span>: <span class="message">A newer version of androidx.test.espresso:espresso-core than 3.6.1 is available: 3.7.0</span><br /><pre class="errorlines">
 <span class="lineno"> 53 </span>    
 <span class="lineno"> 54 </span>    testImplementation <span class="string">'junit:junit:4.13.2'</span>
 <span class="lineno"> 55 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.2.1'</span>
 <span class="caretline"><span class="lineno"> 56 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.espresso:espresso-core:3.6.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 57 </span>}
+<span class="lineno"> 57 </span>
+<span class="lineno"> 58 </span>    implementation <span class="string">'io.noties.markwon:core:4.6.2'</span>
+<span class="lineno"> 59 </span>    implementation <span class="string">'io.noties.markwon:ext-tables:4.6.2'</span></pre>
+
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:68</span>: <span class="message">A newer version of androidx.activity:activity-ktx than 1.9.3 is available: 1.11.0</span><br /><pre class="errorlines">
+<span class="lineno"> 65 </span>    <span class="comment">// File picker and image handling</span>
+<span class="lineno"> 66 </span>    implementation <span class="string">'com.github.bumptech.glide:glide:4.16.0'</span>
+<span class="lineno"> 67 </span>    annotationProcessor <span class="string">'com.github.bumptech.glide:compiler:4.16.0'</span>
+<span class="caretline"><span class="lineno"> 68 </span>    implementation <span class="warning"><span class="string">'androidx.activity:activity-ktx:1.9.3'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 69 </span>    implementation <span class="string">'androidx.fragment:fragment-ktx:1.7.0'</span>
+<span class="lineno"> 70 </span>}
+</pre>
+
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:69</span>: <span class="message">A newer version of androidx.fragment:fragment-ktx than 1.7.0 is available: 1.8.9</span><br /><pre class="errorlines">
+<span class="lineno"> 66 </span>    implementation <span class="string">'com.github.bumptech.glide:glide:4.16.0'</span>
+<span class="lineno"> 67 </span>    annotationProcessor <span class="string">'com.github.bumptech.glide:compiler:4.16.0'</span>
+<span class="lineno"> 68 </span>    implementation <span class="string">'androidx.activity:activity-ktx:1.9.3'</span>
+<span class="caretline"><span class="lineno"> 69 </span>    implementation <span class="warning"><span class="string">'androidx.fragment:fragment-ktx:1.7.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 70 </span>}
 </pre>
 
 </div>
@@ -379,6 +463,57 @@ Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id
 Dismiss</button>            </div>
             </div>
           </section>
+<a name="Correctness:Chrome OS"></a>
+<a name="PermissionImpliesUnsupportedChromeOsHardware"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="PermissionImpliesUnsupportedChromeOsHardwareCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Permission Implies Unsupported Chrome OS Hardware</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:8</span>: <span class="message">Permission exists without corresponding hardware <code>&lt;uses-feature android:name="android.hardware.camera" required="false"></code> tag</span><br /><pre class="errorlines">
+<span class="lineno">  5 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.INTERNET"</span> />
+<span class="lineno">  6 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.ACCESS_NETWORK_STATE"</span> />
+<span class="lineno">  7 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.READ_EXTERNAL_STORAGE"</span> />
+<span class="caretline"><span class="lineno">  8 </span>    <span class="tag">&lt;</span><span class="error"><span class="tag">uses-permission</span></span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.CAMERA"</span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  9 </span>
+<span class="lineno"> 10 </span>    <span class="tag">&lt;application</span><span class="attribute">
+</span><span class="lineno"> 11 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">allowBackup</span>=<span class="value">"true"</span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationPermissionImpliesUnsupportedChromeOsHardware" style="display: none;">
+The <code>&lt;uses-permission></code> element should not require a permission that implies an unsupported large screen hardware feature. Google Play assumes that certain hardware related permissions indicate that the underlying hardware features are required by default. To fix the issue, consider declaring the corresponding &lt;uses-feature> element with <code>required="false"</code> attribute.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/topic/arc/manifest.html#implied-features">https://developer.android.com/topic/arc/manifest.html#implied-features</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "PermissionImpliesUnsupportedChromeOsHardware" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">PermissionImpliesUnsupportedChromeOsHardware</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Chrome OS</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Error</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 3/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationPermissionImpliesUnsupportedChromeOsHardwareLink" onclick="reveal('explanationPermissionImpliesUnsupportedChromeOsHardware');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="PermissionImpliesUnsupportedChromeOsHardwareCardLink" onclick="hideid('PermissionImpliesUnsupportedChromeOsHardwareCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
 <a name="Performance"></a>
 <a name="NotifyDataSetChanged"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="NotifyDataSetChangedCard" style="display: block;">
@@ -389,23 +524,41 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt">../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt</a>:113</span>: <span class="message">It will always be more efficient to use more specific change events if you can. Rely on <code>notifyDataSetChanged</code> as a last resort.</span><br /><pre class="errorlines">
-<span class="lineno"> 110 </span>                    messages.removeAt(messages.size - <span class="number">1</span>)
-<span class="lineno"> 111 </span>                    chatAdapter.messages.clear()
-<span class="lineno"> 112 </span>                    chatAdapter.messages.addAll(messages)
-<span class="caretline"><span class="lineno"> 113 </span>                    <span class="warning">chatAdapter.notifyDataSetChanged()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 114 </span>                }
-<span class="lineno"> 115 </span>                
-<span class="lineno"> 116 </span>                <span class="comment">// Add AI response</span></pre>
+<span class="location"><a href="../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt">../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt</a>:203</span>: <span class="message">It will always be more efficient to use more specific change events if you can. Rely on <code>notifyDataSetChanged</code> as a last resort.</span><br /><pre class="errorlines">
+<span class="lineno"> 200 </span>                    messages.removeAt(messages.size - <span class="number">1</span>)
+<span class="lineno"> 201 </span>                    chatAdapter.messages.clear()
+<span class="lineno"> 202 </span>                    chatAdapter.messages.addAll(messages)
+<span class="caretline"><span class="lineno"> 203 </span>                    <span class="warning">chatAdapter.notifyDataSetChanged()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 204 </span>                }
+<span class="lineno"> 205 </span>                
+<span class="lineno"> 206 </span>                <span class="comment">// Add AI response</span></pre>
 
-<span class="location"><a href="../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt">../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt</a>:130</span>: <span class="message">It will always be more efficient to use more specific change events if you can. Rely on <code>notifyDataSetChanged</code> as a last resort.</span><br /><pre class="errorlines">
-<span class="lineno"> 127 </span>                    messages.removeAt(messages.size - <span class="number">1</span>)
-<span class="lineno"> 128 </span>                    chatAdapter.messages.clear()
-<span class="lineno"> 129 </span>                    chatAdapter.messages.addAll(messages)
-<span class="caretline"><span class="lineno"> 130 </span>                    <span class="warning">chatAdapter.notifyDataSetChanged()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 131 </span>                }
-<span class="lineno"> 132 </span>                
-<span class="lineno"> 133 </span>                <span class="comment">// Add error message</span></pre>
+<span class="location"><a href="../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt">../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt</a>:220</span>: <span class="message">It will always be more efficient to use more specific change events if you can. Rely on <code>notifyDataSetChanged</code> as a last resort.</span><br /><pre class="errorlines">
+<span class="lineno"> 217 </span>                    messages.removeAt(messages.size - <span class="number">1</span>)
+<span class="lineno"> 218 </span>                    chatAdapter.messages.clear()
+<span class="lineno"> 219 </span>                    chatAdapter.messages.addAll(messages)
+<span class="caretline"><span class="lineno"> 220 </span>                    <span class="warning">chatAdapter.notifyDataSetChanged()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 221 </span>                }
+<span class="lineno"> 222 </span>                
+<span class="lineno"> 223 </span>                <span class="comment">// Add error message</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt">../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt</a>:246</span>: <span class="message">It will always be more efficient to use more specific change events if you can. Rely on <code>notifyDataSetChanged</code> as a last resort.</span><br /><pre class="errorlines">
+<span class="lineno"> 243 </span>                    messages.removeAt(messages.size - <span class="number">1</span>)
+<span class="lineno"> 244 </span>                    chatAdapter.messages.clear()
+<span class="lineno"> 245 </span>                    chatAdapter.messages.addAll(messages)
+<span class="caretline"><span class="lineno"> 246 </span>                    <span class="warning">chatAdapter.notifyDataSetChanged()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 247 </span>                }
+<span class="lineno"> 248 </span>                
+<span class="lineno"> 249 </span>                <span class="comment">// Add AI response</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt">../../src/main/java/com/ratnesh/singh/myai/WelcomeActivity.kt</a>:263</span>: <span class="message">It will always be more efficient to use more specific change events if you can. Rely on <code>notifyDataSetChanged</code> as a last resort.</span><br /><pre class="errorlines">
+<span class="lineno"> 260 </span>                    messages.removeAt(messages.size - <span class="number">1</span>)
+<span class="lineno"> 261 </span>                    chatAdapter.messages.clear()
+<span class="lineno"> 262 </span>                    chatAdapter.messages.addAll(messages)
+<span class="caretline"><span class="lineno"> 263 </span>                    <span class="warning">chatAdapter.notifyDataSetChanged()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 264 </span>                }
+<span class="lineno"> 265 </span>                
+<span class="lineno"> 266 </span>                <span class="comment">// Add error message</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationNotifyDataSetChanged" style="display: none;">
@@ -442,6 +595,15 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
+<span class="location"><a href="../../src/main/res/layout/activity_image_viewer.xml">../../src/main/res/layout/activity_image_viewer.xml</a>:6</span>: <span class="message">Possible overdraw: Root element paints background <code>@color/black</code> with a theme that also paints a background (inferred theme is <code>@style/Theme_MyAi_NoActionBar</code>)</span><br /><pre class="errorlines">
+<span class="lineno">  3 </span>    <span class="prefix">xmlns:</span><span class="attribute">app</span>=<span class="value">"http://schemas.android.com/apk/res-auto"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"match_parent"</span>
+<span class="caretline"><span class="lineno">  6 </span>    <span class="warning"><span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@color/black"</span></span>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  7 </span>
+<span class="lineno">  8 </span>    <span class="tag">&lt;ImageView</span><span class="attribute">
+</span><span class="lineno">  9 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/ivFullImage"</span></pre>
+
 <span class="location"><a href="../../src/main/res/layout/activity_sign_in.xml">../../src/main/res/layout/activity_sign_in.xml</a>:7</span>: <span class="message">Possible overdraw: Root element paints background <code>@color/light_gray</code> with a theme that also paints a background (inferred theme is <code>@style/Theme_MyAi</code>)</span><br /><pre class="errorlines">
 <span class="lineno">  4 </span>    <span class="prefix">xmlns:</span><span class="attribute">tools</span>=<span class="value">"http://schemas.android.com/tools"</span>
 <span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
@@ -450,15 +612,6 @@ Dismiss</button>            </div>
 <span class="lineno">  8 </span>    <span class="prefix">tools:</span><span class="attribute">context</span>=<span class="value">".SignInActivity"</span>>
 <span class="lineno">  9 </span>
 <span class="lineno"> 10 </span>    <span class="tag">&lt;ImageView</span></pre>
-
-<span class="location"><a href="../../src/main/res/layout/activity_welcome.xml">../../src/main/res/layout/activity_welcome.xml</a>:7</span>: <span class="message">Possible overdraw: Root element paints background <code>@color/light_gray</code> with a theme that also paints a background (inferred theme is <code>@style/Theme.MyAi</code>)</span><br /><pre class="errorlines">
-<span class="lineno">  4 </span>    <span class="prefix">xmlns:</span><span class="attribute">tools</span>=<span class="value">"http://schemas.android.com/tools"</span>
-<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
-<span class="lineno">  6 </span>    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"match_parent"</span>
-<span class="caretline"><span class="lineno">  7 </span>    <span class="warning"><span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@color/light_gray"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  8 </span>    <span class="prefix">tools:</span><span class="attribute">context</span>=<span class="value">".WelcomeActivity"</span>>
-<span class="lineno">  9 </span>
-<span class="lineno"> 10 </span>    <span class="comment">&lt;!-- Top App Bar --></span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationOverdraw" style="display: none;">
@@ -508,9 +661,76 @@ Dismiss</button>            </div>
 <span class="lineno"> 4 </span>    <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"@color/colorPrimary"</span> />
 <span class="lineno"> 5 </span>    <span class="tag">&lt;stroke</span></pre>
 
+<span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:5</span>: <span class="message">The resource <code>R.color.colorAccent</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  2 </span><span class="tag">&lt;resources></span>
+<span class="lineno">  3 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"colorPrimary"</span>>#6366F1<span class="tag">&lt;/color></span>
+<span class="lineno">  4 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"colorPrimaryDark"</span>>#4F46E5<span class="tag">&lt;/color></span>
+<span class="caretline"><span class="lineno">  5 </span>    <span class="tag">&lt;color</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"colorAccent"</span></span>>#EC4899<span class="tag">&lt;/color></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  6 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"white"</span>>#FFFFFF<span class="tag">&lt;/color></span>
+<span class="lineno">  7 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"black"</span>>#1F2937<span class="tag">&lt;/color></span>
+<span class="lineno">  8 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"gray"</span>>#6B7280<span class="tag">&lt;/color></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:12</span>: <span class="message">The resource <code>R.color.surface</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  9 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"gray_200"</span>>#E5E7EB<span class="tag">&lt;/color></span>
+<span class="lineno"> 10 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"gray_600"</span>>#6B7280<span class="tag">&lt;/color></span>
+<span class="lineno"> 11 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"light_gray"</span>>#F9FAFB<span class="tag">&lt;/color></span>
+<span class="caretline"><span class="lineno"> 12 </span>    <span class="tag">&lt;color</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"surface"</span></span>>#FFFFFF<span class="tag">&lt;/color></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 13 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"surface_variant"</span>>#F3F4F6<span class="tag">&lt;/color></span>
+<span class="lineno"> 14 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"on_surface"</span>>#1F2937<span class="tag">&lt;/color></span>
+<span class="lineno"> 15 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"on_surface_variant"</span>>#6B7280<span class="tag">&lt;/color></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:13</span>: <span class="message">The resource <code>R.color.surface_variant</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 10 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"gray_600"</span>>#6B7280<span class="tag">&lt;/color></span>
+<span class="lineno"> 11 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"light_gray"</span>>#F9FAFB<span class="tag">&lt;/color></span>
+<span class="lineno"> 12 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"surface"</span>>#FFFFFF<span class="tag">&lt;/color></span>
+<span class="caretline"><span class="lineno"> 13 </span>    <span class="tag">&lt;color</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"surface_variant"</span></span>>#F3F4F6<span class="tag">&lt;/color></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 14 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"on_surface"</span>>#1F2937<span class="tag">&lt;/color></span>
+<span class="lineno"> 15 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"on_surface_variant"</span>>#6B7280<span class="tag">&lt;/color></span>
+<span class="lineno"> 16 </span><span class="tag">&lt;/resources></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:14</span>: <span class="message">The resource <code>R.color.on_surface</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 11 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"light_gray"</span>>#F9FAFB<span class="tag">&lt;/color></span>
+<span class="lineno"> 12 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"surface"</span>>#FFFFFF<span class="tag">&lt;/color></span>
+<span class="lineno"> 13 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"surface_variant"</span>>#F3F4F6<span class="tag">&lt;/color></span>
+<span class="caretline"><span class="lineno"> 14 </span>    <span class="tag">&lt;color</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"on_surface"</span></span>>#1F2937<span class="tag">&lt;/color></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 15 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"on_surface_variant"</span>>#6B7280<span class="tag">&lt;/color></span>
+<span class="lineno"> 16 </span><span class="tag">&lt;/resources></span>
+</pre>
+
+<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 9 More Occurrences...</button>
+<div id="UnusedResourcesDiv" style="display: none">
+<span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:15</span>: <span class="message">The resource <code>R.color.on_surface_variant</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 12 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"surface"</span>>#FFFFFF<span class="tag">&lt;/color></span>
+<span class="lineno"> 13 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"surface_variant"</span>>#F3F4F6<span class="tag">&lt;/color></span>
+<span class="lineno"> 14 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"on_surface"</span>>#1F2937<span class="tag">&lt;/color></span>
+<span class="caretline"><span class="lineno"> 15 </span>    <span class="tag">&lt;color</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"on_surface_variant"</span></span>>#6B7280<span class="tag">&lt;/color></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 16 </span><span class="tag">&lt;/resources></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/ic_send.xml">../../src/main/res/drawable/ic_send.xml</a>:1</span>: <span class="message">The resource <code>R.drawable.ic_send</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="caretline"><span class="lineno">  1 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"24dp"</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"24dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span></pre>
+
+<span class="location"><a href="../../src/main/res/anim/message_enter_animation.xml">../../src/main/res/anim/message_enter_animation.xml</a>:2</span>: <span class="message">The resource <code>R.anim.message_enter_animation</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;set</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">duration</span>=<span class="value">"300"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">interpolator</span>=<span class="value">"@android:anim/decelerate_interpolator"</span>>
+<span class="lineno">  5 </span>    
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/send_button_background.xml">../../src/main/res/drawable/send_button_background.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.send_button_background</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;shape</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">shape</span>=<span class="value">"oval"</span>>
+<span class="lineno">  4 </span>    <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"@color/colorPrimary"</span> />
+<span class="lineno">  5 </span>    <span class="tag">&lt;stroke</span></pre>
+
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:3</span>: <span class="message">The resource <code>R.string.sign_in_with_google</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="tag">&lt;resources></span>
-<span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>MyAi<span class="tag">&lt;/string></span>
+<span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>MAAI<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"sign_in_with_google"</span></span>>Sign in with Google<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"welcome_title"</span>>Welcome to MyAi!<span class="tag">&lt;/string></span>
 <span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"welcome_message"</span>>Hello, %s! You have successfully signed in.<span class="tag">&lt;/string></span>
@@ -518,7 +738,7 @@ Dismiss</button>            </div>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:4</span>: <span class="message">The resource <code>R.string.welcome_title</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="tag">&lt;resources></span>
-<span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>MyAi<span class="tag">&lt;/string></span>
+<span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>MAAI<span class="tag">&lt;/string></span>
 <span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"sign_in_with_google"</span>>Sign in with Google<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"welcome_title"</span></span>>Welcome to MyAi!<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"welcome_message"</span>>Hello, %s! You have successfully signed in.<span class="tag">&lt;/string></span>
@@ -526,7 +746,7 @@ Dismiss</button>            </div>
 <span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"signing_in"</span>>Signing in...<span class="tag">&lt;/string></span></pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:5</span>: <span class="message">The resource <code>R.string.welcome_message</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>MyAi<span class="tag">&lt;/string></span>
+<span class="lineno">  2 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>MAAI<span class="tag">&lt;/string></span>
 <span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"sign_in_with_google"</span>>Sign in with Google<span class="tag">&lt;/string></span>
 <span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"welcome_title"</span>>Welcome to MyAi!<span class="tag">&lt;/string></span>
 <span class="caretline"><span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"welcome_message"</span></span>>Hello, %s! You have successfully signed in.<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -543,6 +763,15 @@ Dismiss</button>            </div>
 <span class="lineno">  8 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"sign_in_failed"</span>>Sign in failed. Please try again.<span class="tag">&lt;/string></span>
 <span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"sign_out_successful"</span>>Signed out successfully<span class="tag">&lt;/string></span></pre>
 
+<span class="location"><a href="../../src/main/res/values/themes.xml">../../src/main/res/values/themes.xml</a>:3</span>: <span class="message">The resource <code>R.style.Base_Theme_MyAi</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="tag">&lt;resources</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">tools</span>=<span class="value">"http://schemas.android.com/tools"</span>>
+<span class="lineno">  2 </span>    <span class="comment">&lt;!-- Base application theme. --></span>
+<span class="caretline"><span class="lineno">  3 </span>    <span class="tag">&lt;style</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"Base.Theme.MyAi"</span></span> <span class="attribute">parent</span>=<span class="value">"Theme.Material3.DayNight"</span>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  4 </span>        <span class="comment">&lt;!-- Customize your light theme here. --></span>
+<span class="lineno">  5 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"colorPrimary"</span>>@color/colorPrimary<span class="tag">&lt;/item></span>
+<span class="lineno">  6 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"colorPrimaryVariant"</span>>@color/colorPrimaryDark<span class="tag">&lt;/item></span></pre>
+
+</div>
 </div>
 <div class="metadata"><div class="explanation" id="explanationUnusedResources" style="display: none;">
 Unused resources make applications larger and slow down builds.<br/>
@@ -690,6 +919,24 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
+<span class="location"><a href="../../src/main/res/layout/activity_image_viewer.xml">../../src/main/res/layout/activity_image_viewer.xml</a>:13</span>: <span class="message">Hardcoded string "Full size image", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno"> 10 </span>        <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"0dp"</span>
+<span class="lineno"> 11 </span>        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"0dp"</span>
+<span class="lineno"> 12 </span>        <span class="prefix">android:</span><span class="attribute">scaleType</span>=<span class="value">"centerInside"</span>
+<span class="caretline"><span class="lineno"> 13 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">contentDescription</span>=<span class="value">"Full size image"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 14 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintTop_toTopOf</span>=<span class="value">"parent"</span>
+<span class="lineno"> 15 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintBottom_toBottomOf</span>=<span class="value">"parent"</span>
+<span class="lineno"> 16 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintStart_toStartOf</span>=<span class="value">"parent"</span></pre>
+
+<span class="location"><a href="../../src/main/res/layout/activity_image_viewer.xml">../../src/main/res/layout/activity_image_viewer.xml</a>:25</span>: <span class="message">Hardcoded string "Close", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno"> 22 </span>        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"48dp"</span>
+<span class="lineno"> 23 </span>        <span class="prefix">android:</span><span class="attribute">layout_margin</span>=<span class="value">"16dp"</span>
+<span class="lineno"> 24 </span>        <span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@drawable/send_button_ripple"</span>
+<span class="caretline"><span class="lineno"> 25 </span>        <span class="warning"><span class="prefix">android:</span><span class="attribute">contentDescription</span>=<span class="value">"Close"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 26 </span>        <span class="prefix">android:</span><span class="attribute">src</span>=<span class="value">"@drawable/ic_close"</span>
+<span class="lineno"> 27 </span>        <span class="prefix">android:</span><span class="attribute">scaleType</span>=<span class="value">"centerInside"</span>
+<span class="lineno"> 28 </span>        <span class="prefix">android:</span><span class="attribute">padding</span>=<span class="value">"12dp"</span></pre>
+
 <span class="location"><a href="../../src/main/res/layout/activity_sign_in.xml">../../src/main/res/layout/activity_sign_in.xml</a>:38</span>: <span class="message">Hardcoded string "Welcome to MyAi", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno"> 35 </span>        <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"wrap_content"</span>
 <span class="lineno"> 36 </span>        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
@@ -699,24 +946,54 @@ Dismiss</button>            </div>
 <span class="lineno"> 40 </span>        <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"18sp"</span>
 <span class="lineno"> 41 </span>        <span class="prefix">app:</span><span class="attribute">layout_constraintEnd_toEndOf</span>=<span class="value">"parent"</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_welcome.xml">../../src/main/res/layout/activity_welcome.xml</a>:62</span>: <span class="message">Hardcoded string "Type your message...", should use <code>@string</code> resource</span><br /><pre class="errorlines">
-<span class="lineno"> 59 </span>                <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
-<span class="lineno"> 60 </span>                <span class="prefix">android:</span><span class="attribute">layout_weight</span>=<span class="value">"1"</span>
-<span class="lineno"> 61 </span>                <span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@android:color/transparent"</span>
-<span class="caretline"><span class="lineno"> 62 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">hint</span>=<span class="value">"Type your message..."</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 63 </span>                <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"textMultiLine"</span>
-<span class="lineno"> 64 </span>                <span class="prefix">android:</span><span class="attribute">maxLines</span>=<span class="value">"3"</span>
-<span class="lineno"> 65 </span>                <span class="prefix">android:</span><span class="attribute">padding</span>=<span class="value">"12dp"</span> />
+<span class="location"><a href="../../src/main/res/layout/activity_welcome.xml">../../src/main/res/layout/activity_welcome.xml</a>:59</span>: <span class="message">Hardcoded string "Attach file", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno">  56 </span>                <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"40dp"</span>
+<span class="lineno">  57 </span>                <span class="prefix">android:</span><span class="attribute">layout_marginEnd</span>=<span class="value">"8dp"</span>
+<span class="lineno">  58 </span>                <span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@drawable/send_button_ripple"</span>
+<span class="caretline"><span class="lineno">  59 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">contentDescription</span>=<span class="value">"Attach file"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  60 </span>                <span class="prefix">android:</span><span class="attribute">src</span>=<span class="value">"@drawable/ic_attachment"</span>
+<span class="lineno">  61 </span>                <span class="prefix">android:</span><span class="attribute">scaleType</span>=<span class="value">"centerInside"</span>
+<span class="lineno">  62 </span>                <span class="prefix">android:</span><span class="attribute">padding</span>=<span class="value">"8dp"</span> />
 </pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_welcome.xml">../../src/main/res/layout/activity_welcome.xml</a>:74</span>: <span class="message">Hardcoded string "Send message", should use <code>@string</code> resource</span><br /><pre class="errorlines">
-<span class="lineno"> 71 </span>                <span class="prefix">android:</span><span class="attribute">layout_gravity</span>=<span class="value">"center_vertical"</span>
-<span class="lineno"> 72 </span>                <span class="prefix">android:</span><span class="attribute">layout_marginStart</span>=<span class="value">"8dp"</span>
-<span class="lineno"> 73 </span>                <span class="prefix">android:</span><span class="attribute">backgroundTint</span>=<span class="value">"@color/colorPrimary"</span>
-<span class="caretline"><span class="lineno"> 74 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">contentDescription</span>=<span class="value">"Send message"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 75 </span>                <span class="prefix">android:</span><span class="attribute">icon</span>=<span class="value">"@drawable/ic_send"</span>
-<span class="lineno"> 76 </span>                <span class="prefix">app:</span><span class="attribute">cornerRadius</span>=<span class="value">"20dp"</span>
-<span class="lineno"> 77 </span>                <span class="prefix">app:</span><span class="attribute">iconPadding</span>=<span class="value">"0dp"</span></pre>
+<span class="location"><a href="../../src/main/res/layout/activity_welcome.xml">../../src/main/res/layout/activity_welcome.xml</a>:70</span>: <span class="message">Hardcoded string "Type your message...", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno">  67 </span>                <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
+<span class="lineno">  68 </span>                <span class="prefix">android:</span><span class="attribute">layout_weight</span>=<span class="value">"1"</span>
+<span class="lineno">  69 </span>                <span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@android:color/transparent"</span>
+<span class="caretline"><span class="lineno">  70 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">hint</span>=<span class="value">"Type your message..."</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  71 </span>                <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"textMultiLine"</span>
+<span class="lineno">  72 </span>                <span class="prefix">android:</span><span class="attribute">maxLines</span>=<span class="value">"4"</span>
+<span class="lineno">  73 </span>                <span class="prefix">android:</span><span class="attribute">paddingStart</span>=<span class="value">"16dp"</span></pre>
+
+<button class="mdl-button mdl-js-button mdl-button--primary" id="HardcodedTextDivLink" onclick="reveal('HardcodedTextDiv');" />+ 4 More Occurrences...</button>
+<div id="HardcodedTextDiv" style="display: none">
+<span class="location"><a href="../../src/main/res/layout/activity_welcome.xml">../../src/main/res/layout/activity_welcome.xml</a>:93</span>: <span class="message">Hardcoded string "Send message", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno">  90 </span>                    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
+<span class="lineno">  91 </span>                    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"match_parent"</span>
+<span class="lineno">  92 </span>                    <span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@drawable/send_button_ripple"</span>
+<span class="caretline"><span class="lineno">  93 </span>                    <span class="warning"><span class="prefix">android:</span><span class="attribute">contentDescription</span>=<span class="value">"Send message"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  94 </span>                    <span class="prefix">android:</span><span class="attribute">src</span>=<span class="value">"@drawable/ic_send_modern"</span>
+<span class="lineno">  95 </span>                    <span class="prefix">android:</span><span class="attribute">scaleType</span>=<span class="value">"centerInside"</span>
+<span class="lineno">  96 </span>                    <span class="prefix">android:</span><span class="attribute">padding</span>=<span class="value">"12dp"</span> />
+</pre>
+
+<span class="location"><a href="../../src/main/res/layout/item_message_ai_image.xml">../../src/main/res/layout/item_message_ai_image.xml</a>:35</span>: <span class="message">Hardcoded string "Message image", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno"> 32 </span>                <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"200dp"</span>
+<span class="lineno"> 33 </span>                <span class="prefix">android:</span><span class="attribute">scaleType</span>=<span class="value">"centerCrop"</span>
+<span class="lineno"> 34 </span>                <span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@color/gray_200"</span>
+<span class="caretline"><span class="lineno"> 35 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">contentDescription</span>=<span class="value">"Message image"</span></span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 36 </span>
+<span class="lineno"> 37 </span>            <span class="tag">&lt;TextView</span><span class="attribute">
+</span><span class="lineno"> 38 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/tvMessageText"</span></pre>
+
+<span class="location"><a href="../../src/main/res/layout/item_message_user_image.xml">../../src/main/res/layout/item_message_user_image.xml</a>:34</span>: <span class="message">Hardcoded string "Message image", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="lineno"> 31 </span>                <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"200dp"</span>
+<span class="lineno"> 32 </span>                <span class="prefix">android:</span><span class="attribute">scaleType</span>=<span class="value">"centerCrop"</span>
+<span class="lineno"> 33 </span>                <span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@color/gray_200"</span>
+<span class="caretline"><span class="lineno"> 34 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">contentDescription</span>=<span class="value">"Message image"</span></span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 35 </span>
+<span class="lineno"> 36 </span>            <span class="tag">&lt;TextView</span><span class="attribute">
+</span><span class="lineno"> 37 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/tvMessageText"</span></pre>
 
 <span class="location"><a href="../../src/main/res/menu/menu_welcome.xml">../../src/main/res/menu/menu_welcome.xml</a>:7</span>: <span class="message">Hardcoded string "Sign Out", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  4 </span>    
@@ -728,6 +1005,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 10 </span>        
 </pre>
 
+</div>
 </div>
 <div class="metadata"><div class="explanation" id="explanationHardcodedText" style="display: none;">
 Hardcoding text attributes directly in layout files is bad for several reasons:<br/>

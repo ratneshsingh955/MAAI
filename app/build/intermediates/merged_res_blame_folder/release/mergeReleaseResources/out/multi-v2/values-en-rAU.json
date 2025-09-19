@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ratnesh.singh.myai.app-mergeReleaseResources-48:/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "com.ratnesh.singh.myai.app-mergeReleaseResources-53:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
                     "source": "/Users/ratnesh.singh/.gradle/caches/8.14.3/transforms/a0d9ec775989bc6f112fc1e5f3de1a1a/transformed/core-1.15.0/res/values-en-rAU/values-en-rAU.xml",
