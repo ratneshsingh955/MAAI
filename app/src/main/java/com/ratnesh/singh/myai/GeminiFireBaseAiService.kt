@@ -7,6 +7,9 @@ import com.google.firebase.Firebase
 import com.google.firebase.ai.GenerativeModel
 import com.google.firebase.ai.ai
 import com.google.firebase.ai.type.GenerativeBackend
+import com.google.firebase.ai.type.content
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.InputStream
@@ -36,24 +39,38 @@ class GeminiFireBaseAiService {
     
     /**
      * Generate text from Gemini given a prompt and an image.
-     * For now, this will analyze the image description and provide a response.
+     * This method uses the actual Firebase AI multimodal capabilities.
      */
     suspend fun generateTextWithImage(prompt: String, imageUri: Uri, context: Context): String {
         return withContext(Dispatchers.IO) {
             try {
-                // For now, we'll provide a response about the image being uploaded
-                // In a full implementation, you would use the Firebase AI Vision API
-                val imagePrompt = if (prompt.isNotEmpty()) {
-                    "I've uploaded an image with the following description: $prompt. Please analyze this image and provide insights about what you can see, including any objects, text, colors, or other notable features. If there's text in the image, please transcribe it. If it's a diagram or chart, please explain what it shows."
-                } else {
-                    "I've uploaded an image. Please analyze this image and provide insights about what you can see, including any objects, text, colors, or other notable features. If there's text in the image, please transcribe it. If it's a diagram or chart, please explain what it shows."
+                // Read the image data from URI
+                val inputStream: InputStream? = context.contentResolver.openInputStream(imageUri)
+                val imageBytes = inputStream?.readBytes() ?: byteArrayOf()
+                
+                if (imageBytes.isEmpty()) {
+                    return@withContext "Error: Could not read image data. Please try uploading the image again."
                 }
                 
-                val response = model.generateContent(imagePrompt)
-                response.text ?: "I can see you've uploaded an image, but I'm currently unable to analyze images directly. Please describe what you'd like to know about the image, and I'll do my best to help based on your description."
+                // Convert image bytes to Bitmap
+                val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+                if (bitmap == null) {
+                    return@withContext "Error: Could not decode image. Please try uploading a different image."
+                }
+                
+                // Use Firebase AI multimodal content with both text and image
+                val multimodalContent = content {
+                    text(prompt)
+                    image(bitmap)
+                }
+                
+                // Generate content using multimodal input
+                val response = model.generateContent(multimodalContent)
+                response.text ?: "I'm having trouble analyzing the image. Could you provide more details about what you see in the image so I can help you better?"
+                
             } catch (e: Exception) {
                 Log.e("GeminiService", "Error generating text with image", e)
-                "I can see you've uploaded an image, but I'm currently unable to analyze images directly. Please describe what you'd like to know about the image, and I'll do my best to help based on your description."
+                "I encountered an error while analyzing the image. Please try uploading the image again or describe what you see in the image so I can help you better."
             }
         }
     }

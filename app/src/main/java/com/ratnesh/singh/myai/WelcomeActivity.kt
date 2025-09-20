@@ -160,7 +160,7 @@ class WelcomeActivity : AppCompatActivity() {
         
         // AI asks for specific prompt about the image
         val aiPromptMessage = Message(
-            text = "I can see you've uploaded an image! What specific question do you have about it? Please describe what you'd like me to analyze or explain.",
+            text = "I can see you've uploaded an image! I can analyze images and answer specific questions about them. What would you like to know about this image? For example:\n\n• What's written in this document?\n• What objects do you see?\n• Describe what's happening in this photo\n• What's the total amount on this receipt?\n\nPlease ask me anything specific about the image!",
             isFromUser = false
         )
         chatAdapter.addMessage(aiPromptMessage)
@@ -214,7 +214,7 @@ class WelcomeActivity : AppCompatActivity() {
         
         // Show typing indicator
         val typingMessage = Message(
-            text = "AI is analyzing the image...",
+            text = "AI is analyzing the image and your question...",
             isFromUser = false
         )
         chatAdapter.addMessage(typingMessage)
@@ -273,7 +273,7 @@ class WelcomeActivity : AppCompatActivity() {
                 
                 // Remove typing indicator
                 val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "AI is analyzing the image...") {
+                if (messages.isNotEmpty() && messages.last().text == "AI is analyzing the image and your question...") {
                     messages.removeAt(messages.size - 1)
                     chatAdapter.messages.clear()
                     chatAdapter.messages.addAll(messages)
@@ -290,7 +290,7 @@ class WelcomeActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 // Remove typing indicator
                 val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "AI is analyzing the image...") {
+                if (messages.isNotEmpty() && messages.last().text == "AI is analyzing the image and your question...") {
                     messages.removeAt(messages.size - 1)
                     chatAdapter.messages.clear()
                     chatAdapter.messages.addAll(messages)
