@@ -9,7 +9,11 @@
         <item name="colorOnSecondary">@color/white</item>
     </style>
 
+<!--    <style name="Theme.MyAi" parent="Theme.Material3.DayNight">-->
+<!--        <item name="android:windowDisablePreview">true</item>   &lt;!&ndash;to remove splash &ndash;&gt;-->
+<!--    </style>-->
 
     <style name="Theme.MyAi" parent="Theme.Material3.DayNight"/>
+
     <style name="Theme.MyAi.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar"/>
 </resources>
