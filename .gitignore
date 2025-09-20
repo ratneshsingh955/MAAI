@@ -1,0 +1,54 @@
+# Gradle
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration file (sdk path, keys, etc.)
+local.properties
+
+# Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Log/Temp/Cache
+*.log
+captures/
+output.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# APK / Dex / Class files
+*.apk
+*.ap_
+*.dex
+*.class
+
+# Java/Kotlin/Android build outputs
+*.jar
+*.war
+*.ear
+*.aar
+
+# Generated files from annotation processors (Room, Dagger, Hilt, etc.)
+build/generated/
+
+# NDK / CMake
+.obj/
+.externalNativeBuild/
+.cxx/
+
+# Firebase/Crashlytics
+firebase-debug.log
+crashlytics-build.properties
+
+# Android Profiling
+*.hprof
+
+# Keystore files (DO NOT SHARE REAL ONES)
+*.jks
+*.keystore
