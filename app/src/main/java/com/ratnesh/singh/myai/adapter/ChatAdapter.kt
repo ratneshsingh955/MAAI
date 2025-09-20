@@ -4,6 +4,7 @@ import android.animation.AnimatorInflater
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -90,17 +91,23 @@ class ChatAdapter(private val markwon: Markwon) : RecyclerView.Adapter<ChatAdapt
             // Handle image if present
             message.imageUri?.let { imageUri ->
                 ivMessageImage?.let { imageView ->
+                    Log.d("ChatAdapter", "Loading image in chat: $imageUri")
                     Glide.with(itemView.context)
                         .load(imageUri)
                         .into(imageView)
                     
                     // Set click listener to open full screen
                     imageView.setOnClickListener {
+                        Log.d("ChatAdapter", "Image clicked, opening full screen: $imageUri")
                         val intent = Intent(itemView.context, ImageViewerActivity::class.java)
                         intent.putExtra("image_uri", imageUri)
                         itemView.context.startActivity(intent)
                     }
+                } ?: run {
+                    Log.e("ChatAdapter", "ImageView is null for image message")
                 }
+            } ?: run {
+                Log.d("ChatAdapter", "No image URI for message: ${message.text}")
             }
             
             // Add subtle animation for new messages

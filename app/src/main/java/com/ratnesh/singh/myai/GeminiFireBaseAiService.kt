@@ -74,4 +74,43 @@ class GeminiFireBaseAiService {
             }
         }
     }
+    
+    /**
+     * Generate text from Gemini given a prompt and a file.
+     * This method reads the file content and sends it to Gemini for analysis.
+     */
+    suspend fun generateTextWithFile(prompt: String, fileUri: Uri, context: Context): String {
+        return withContext(Dispatchers.IO) {
+            try {
+                // Read the file content
+                val inputStream: InputStream? = context.contentResolver.openInputStream(fileUri)
+                val fileContent = inputStream?.readBytes() ?: byteArrayOf()
+                
+                if (fileContent.isEmpty()) {
+                    return@withContext "Error: Could not read file content. Please try uploading the file again."
+                }
+                
+                // Convert file content to text (assuming it's a text file)
+                val fileText = String(fileContent, Charsets.UTF_8)
+                
+                // Create a comprehensive prompt that includes the file content
+                val enhancedPrompt = """
+                    File Content:
+                    $fileText
+                    
+                    User Question: $prompt
+                    
+                    Please analyze the file content and answer the user's question based on the information in the file.
+                """.trimIndent()
+                
+                // Generate content using the enhanced prompt
+                val response = model.generateContent(enhancedPrompt)
+                response.text ?: "I'm having trouble analyzing the file. Please make sure the file contains readable text content."
+                
+            } catch (e: Exception) {
+                Log.e("GeminiService", "Error generating text with file", e)
+                "I encountered an error while analyzing the file. Please make sure the file contains readable text content and try again."
+            }
+        }
+    }
 }
