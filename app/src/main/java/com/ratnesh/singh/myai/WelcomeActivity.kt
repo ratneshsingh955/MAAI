@@ -8,7 +8,6 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -303,13 +302,13 @@ class WelcomeActivity : AppCompatActivity() {
 
                 // Show typing indicator
                 val typingMessage = Message(
-                    text = "AI is typing...",
+                    text = "MAAI is typing...",
                     isFromUser = false
                 )
                 chatAdapter.addMessage(typingMessage)
 
                 // Generate AI response
-                generateAIResponse(messageText)
+                generateAIResponseForText(messageText)
             }
         }
     }
@@ -343,7 +342,7 @@ class WelcomeActivity : AppCompatActivity() {
 
         // Show typing indicator
         val typingMessage = Message(
-            text = "AI is analyzing the image and your question...",
+            text = "MAAI is analyzing the image and your question...",
             isFromUser = false
         )
         chatAdapter.addMessage(typingMessage)
@@ -382,7 +381,7 @@ class WelcomeActivity : AppCompatActivity() {
 
         // Show typing indicator
         val typingMessage = Message(
-            text = "AI is analyzing the file and your question...",
+            text = "MAAI is analyzing the file and your question...",
             isFromUser = false
         )
         chatAdapter.addMessage(typingMessage)
@@ -391,14 +390,14 @@ class WelcomeActivity : AppCompatActivity() {
         generateAIResponseForFile(userPrompt, fileUri)
     }
 
-    private fun generateAIResponse(userMessage: String) {
+    private fun generateAIResponseForText(userMessage: String) {
         lifecycleScope.launch {
             try {
                 val aiResponse = geminiService.generateText(userMessage)
 
                 // Remove typing indicator
                 val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "AI is typing...") {
+                if (messages.isNotEmpty() && messages.last().text == "MAAI is typing...") {
                     messages.removeAt(messages.size - 1)
                     chatAdapter.messages.clear()
                     chatAdapter.messages.addAll(messages)
@@ -415,7 +414,7 @@ class WelcomeActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 // Remove typing indicator
                 val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "AI is typing...") {
+                if (messages.isNotEmpty() && messages.last().text == "MAAI is typing...") {
                     messages.removeAt(messages.size - 1)
                     chatAdapter.messages.clear()
                     chatAdapter.messages.addAll(messages)
@@ -441,7 +440,7 @@ class WelcomeActivity : AppCompatActivity() {
 
                 // Remove typing indicator
                 val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "AI is analyzing the image and your question...") {
+                if (messages.isNotEmpty() && messages.last().text == "MAAI is analyzing the image and your question...") {
                     messages.removeAt(messages.size - 1)
                     chatAdapter.messages.clear()
                     chatAdapter.messages.addAll(messages)
@@ -458,7 +457,7 @@ class WelcomeActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 // Remove typing indicator
                 val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "AI is analyzing the image and your question...") {
+                if (messages.isNotEmpty() && messages.last().text == "MAAI is analyzing the image and your question...") {
                     messages.removeAt(messages.size - 1)
                     chatAdapter.messages.clear()
                     chatAdapter.messages.addAll(messages)
@@ -484,7 +483,7 @@ class WelcomeActivity : AppCompatActivity() {
 
                 // Remove typing indicator
                 val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "AI is analyzing the file and your question...") {
+                if (messages.isNotEmpty() && messages.last().text == "MAAI is analyzing the file and your question...") {
                     messages.removeAt(messages.size - 1)
                     chatAdapter.messages.clear()
                     chatAdapter.messages.addAll(messages)
@@ -501,7 +500,7 @@ class WelcomeActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 // Remove typing indicator
                 val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "AI is analyzing the file and your question...") {
+                if (messages.isNotEmpty() && messages.last().text == "MAAI is analyzing the file and your question...") {
                     messages.removeAt(messages.size - 1)
                     chatAdapter.messages.clear()
                     chatAdapter.messages.addAll(messages)
