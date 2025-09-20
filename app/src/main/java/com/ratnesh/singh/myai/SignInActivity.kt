@@ -35,6 +35,8 @@ class SignInActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Switch from splash theme to normal theme
+        setTheme(R.style.Theme_MyAi)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 

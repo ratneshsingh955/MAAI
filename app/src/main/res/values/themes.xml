@@ -16,4 +16,12 @@
     <style name="Theme.MyAi" parent="Theme.Material3.DayNight"/>
 
     <style name="Theme.MyAi.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar"/>
+
+
+    <style name="Theme.MyAi.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@color/dark_blue</item>
+        <item name="android:navigationBarColor">@color/dark_blue</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
 </resources>
