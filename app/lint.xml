@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Disable automatic fixes that change files -->
+    <issue id="UnusedImport" severity="warning" />
+    <issue id="UnusedVariable" severity="warning" />
+    <issue id="UnusedParameter" severity="warning" />
+    
+    <!-- Disable formatting issues that auto-fix -->
+    <issue id="Spacing" severity="ignore" />
+    <issue id="Indentation" severity="ignore" />
+    
+    <!-- Keep important warnings but don't auto-fix -->
+    <issue id="MissingPermission" severity="error" />
+    <issue id="HardcodedText" severity="warning" />
+    <issue id="NewApi" severity="warning" />
+    
+    <!-- Disable auto-import organization -->
+    <issue id="ImportOrder" severity="ignore" />
+</lint>
