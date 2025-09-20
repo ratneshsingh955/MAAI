@@ -4,6 +4,11 @@ build/
 **/build/
 !gradle/wrapper/gradle-wrapper.jar
 
+# Build outputs
+app/build/
+**/build/
+**/build/**
+
 # Local configuration file (sdk path, keys, etc.)
 local.properties
 
@@ -52,3 +57,36 @@ crashlytics-build.properties
 # Keystore files (DO NOT SHARE REAL ONES)
 *.jks
 *.keystore
+
+# Build intermediates and outputs
+**/build/
+**/build/**
+**/intermediates/
+**/outputs/
+**/tmp/
+**/generated/
+
+# APK and DEX files
+*.apk
+*.dex
+*.class
+
+# Android Studio cache
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Gradle cache
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+
+# Local properties
+local.properties
+gradle.properties.local
+
+# Generated files
+**/R.java
+**/BuildConfig.java
+**/Manifest.java
