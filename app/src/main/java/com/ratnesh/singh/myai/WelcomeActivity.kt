@@ -31,6 +31,8 @@ class WelcomeActivity : AppCompatActivity() {
     private lateinit var chatAdapter: ChatAdapter
     private lateinit var etMessageInput: TextInputEditText
     private lateinit var markwon: Markwon
+    private var uploadedImageUri: Uri? = null
+    private var isWaitingForImagePrompt: Boolean = false
     
     private val imagePickerLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
@@ -140,18 +142,75 @@ class WelcomeActivity : AppCompatActivity() {
     }
     
     private fun handleImageSelection(imageUri: Uri) {
-        val messageText = etMessageInput.text?.toString()?.trim() ?: ""
+        // Store the uploaded image URI
+        uploadedImageUri = imageUri
+        isWaitingForImagePrompt = true
         
         // Add user message with image to chat
         val userMessage = Message(
-            text = if (messageText.isNotEmpty()) messageText else "Image",
+            text = "Image",
             isFromUser = true,
             imageUri = imageUri
         )
         chatAdapter.addMessage(userMessage)
         
-        // Clear input
+        // Clear input and update hint
         etMessageInput.text?.clear()
+        etMessageInput.hint = "What would you like to know about this image?"
+        
+        // AI asks for specific prompt about the image
+        val aiPromptMessage = Message(
+            text = "I can see you've uploaded an image! What specific question do you have about it? Please describe what you'd like me to analyze or explain.",
+            isFromUser = false
+        )
+        chatAdapter.addMessage(aiPromptMessage)
+    }
+    
+    private fun sendMessage() {
+        val messageText = etMessageInput.text?.toString()?.trim()
+        if (!messageText.isNullOrEmpty()) {
+            if (isWaitingForImagePrompt && uploadedImageUri != null) {
+                // User is providing a prompt for the uploaded image
+                handleImagePrompt(messageText, uploadedImageUri!!)
+            } else {
+                // Regular text message
+                val userMessage = Message(
+                    text = messageText,
+                    isFromUser = true
+                )
+                chatAdapter.addMessage(userMessage)
+                
+                // Clear input
+                etMessageInput.text?.clear()
+                
+                // Show typing indicator
+                val typingMessage = Message(
+                    text = "AI is typing...",
+                    isFromUser = false
+                )
+                chatAdapter.addMessage(typingMessage)
+                
+                // Generate AI response
+                generateAIResponse(messageText)
+            }
+        }
+    }
+    
+    private fun handleImagePrompt(userPrompt: String, imageUri: Uri) {
+        // Add user's prompt to chat
+        val userMessage = Message(
+            text = userPrompt,
+            isFromUser = true
+        )
+        chatAdapter.addMessage(userMessage)
+        
+        // Clear input and reset hint
+        etMessageInput.text?.clear()
+        etMessageInput.hint = "Type your message..."
+        
+        // Reset image prompt state
+        isWaitingForImagePrompt = false
+        uploadedImageUri = null
         
         // Show typing indicator
         val typingMessage = Message(
@@ -160,33 +219,8 @@ class WelcomeActivity : AppCompatActivity() {
         )
         chatAdapter.addMessage(typingMessage)
         
-        // Generate AI response for image
-        generateAIResponseForImage(messageText, imageUri)
-    }
-    
-    private fun sendMessage() {
-        val messageText = etMessageInput.text?.toString()?.trim()
-        if (!messageText.isNullOrEmpty()) {
-            // Add user message to chat
-            val userMessage = Message(
-                text = messageText,
-                isFromUser = true
-            )
-            chatAdapter.addMessage(userMessage)
-            
-            // Clear input
-            etMessageInput.text?.clear()
-            
-            // Show typing indicator
-            val typingMessage = Message(
-                text = "AI is typing...",
-                isFromUser = false
-            )
-            chatAdapter.addMessage(typingMessage)
-            
-            // Generate AI response
-            generateAIResponse(messageText)
-        }
+        // Generate AI response for image with user's custom prompt
+        generateAIResponseForImage(userPrompt, imageUri)
     }
     
     private fun generateAIResponse(userMessage: String) {
