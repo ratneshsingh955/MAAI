@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -20,8 +21,8 @@ import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.ratnesh.singh.myai.adapter.ChatAdapter
-import com.ratnesh.singh.myai.ai.GeminiFireBaseAiService
 import com.ratnesh.singh.myai.model.Message
+import com.ratnesh.singh.myai.viewmodel.ChatViewModel
 import io.noties.markwon.Markwon
 import io.noties.markwon.ext.tables.TablePlugin
 import io.noties.markwon.ext.strikethrough.StrikethroughPlugin
@@ -33,7 +34,7 @@ import kotlinx.coroutines.launch
 class WelcomeActivity : AppCompatActivity() {
 
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var geminiService: GeminiFireBaseAiService
+    private lateinit var viewModel: ChatViewModel
     private lateinit var chatAdapter: ChatAdapter
     private lateinit var etMessageInput: TextInputEditText
     private lateinit var markwon: Markwon
@@ -70,11 +71,20 @@ class WelcomeActivity : AppCompatActivity() {
 
         initializeViews()
         setupFirebaseAuth()
-        setupGeminiService()
+        setupViewModel()
         setupMarkwon()
         setupRecyclerView()
         setupClickListeners()
-        addWelcomeMessage()
+        observeData()
+        
+        // Check if we're loading an existing conversation
+        val conversationId = intent.getLongExtra("conversation_id", -1L)
+        if (conversationId != -1L) {
+            viewModel.loadConversation(conversationId)
+        } else {
+            // Start a new conversation
+            viewModel.startNewConversation()
+        }
     }
 
     private fun initializeViews() {
@@ -94,8 +104,8 @@ class WelcomeActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
     }
 
-    private fun setupGeminiService() {
-        geminiService = GeminiFireBaseAiService()
+    private fun setupViewModel() {
+        viewModel = ViewModelProvider(this)[ChatViewModel::class.java]
     }
 
     private fun setupMarkwon() {
@@ -117,6 +127,32 @@ class WelcomeActivity : AppCompatActivity() {
         }
         // Set the recyclerView reference in the adapter for auto-scrolling
         chatAdapter.setRecyclerView(recyclerView)
+    }
+
+    private fun observeData() {
+        viewModel.messages.observe(this) { messages ->
+            chatAdapter.updateMessages(messages)
+        }
+        
+        viewModel.isLoading.observe(this) { isLoading ->
+            if (isLoading) {
+                chatAdapter.showLoading()
+            } else {
+                chatAdapter.hideLoading()
+            }
+        }
+        
+        viewModel.conversations.observe(this) { conversations ->
+            // Conversations list updated - this will refresh the conversation list
+            // when titles are updated
+        }
+        
+        viewModel.error.observe(this) { error ->
+            error?.let {
+                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+                viewModel.clearError()
+            }
+        }
     }
 
     private fun setupClickListeners() {
@@ -291,44 +327,13 @@ class WelcomeActivity : AppCompatActivity() {
                 handleFilePrompt(messageText, uploadedFileUri!!)
             } else {
                 // Regular text message
-                val userMessage = Message(
-                    text = messageText,
-                    isFromUser = true
-                )
-                chatAdapter.addMessage(userMessage)
-
-                // Clear input
+                viewModel.sendMessage(messageText)
                 etMessageInput.text?.clear()
-
-                // Show typing indicator
-                val typingMessage = Message(
-                    text = "MAAI is typing...",
-                    isFromUser = false
-                )
-                chatAdapter.addMessage(typingMessage)
-
-                // Generate AI response
-                generateAIResponseForText(messageText)
             }
         }
     }
 
     private fun handleImagePrompt(userPrompt: String, imageUri: Uri) {
-        // Add user's image message to chat first
-        val userImageMessage = Message(
-            text = "Image",
-            isFromUser = true,
-            imageUri = imageUri
-        )
-        chatAdapter.addMessage(userImageMessage)
-
-        // Add user's prompt to chat
-        val userMessage = Message(
-            text = userPrompt,
-            isFromUser = true
-        )
-        chatAdapter.addMessage(userMessage)
-
         // Hide the image preview card
         imagePreviewCard.visibility = View.GONE
 
@@ -340,34 +345,11 @@ class WelcomeActivity : AppCompatActivity() {
         isWaitingForImagePrompt = false
         uploadedImageUri = null
 
-        // Show typing indicator
-        val typingMessage = Message(
-            text = "MAAI is analyzing the image and your question...",
-            isFromUser = false
-        )
-        chatAdapter.addMessage(typingMessage)
-
-        // Generate AI response for image with user's custom prompt
-        generateAIResponseForImage(userPrompt, imageUri)
+        // Send message with image using ViewModel
+        viewModel.sendMessageWithImage(userPrompt, imageUri)
     }
 
     private fun handleFilePrompt(userPrompt: String, fileUri: Uri) {
-        // Add user's file message to chat first
-        val fileName = getFileName(fileUri)
-        val userFileMessage = Message(
-            text = "File: $fileName",
-            isFromUser = true,
-            fileUri = fileUri
-        )
-        chatAdapter.addMessage(userFileMessage)
-
-        // Add user's prompt to chat
-        val userMessage = Message(
-            text = userPrompt,
-            isFromUser = true
-        )
-        chatAdapter.addMessage(userMessage)
-
         // Hide the file preview card
         imagePreviewCard.visibility = View.GONE
 
@@ -379,145 +361,10 @@ class WelcomeActivity : AppCompatActivity() {
         isWaitingForFilePrompt = false
         uploadedFileUri = null
 
-        // Show typing indicator
-        val typingMessage = Message(
-            text = "MAAI is analyzing the file and your question...",
-            isFromUser = false
-        )
-        chatAdapter.addMessage(typingMessage)
-
-        // Generate AI response for file with user's custom prompt
-        generateAIResponseForFile(userPrompt, fileUri)
+        // Send message with file using ViewModel
+        viewModel.sendMessageWithFile(userPrompt, fileUri)
     }
 
-    private fun generateAIResponseForText(userMessage: String) {
-        lifecycleScope.launch {
-            try {
-                val aiResponse = geminiService.generateText(userMessage)
-
-                // Remove typing indicator
-                val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "MAAI is typing...") {
-                    messages.removeAt(messages.size - 1)
-                    chatAdapter.messages.clear()
-                    chatAdapter.messages.addAll(messages)
-                    chatAdapter.notifyDataSetChanged()
-                }
-
-                // Add AI response
-                val aiMessage = Message(
-                    text = aiResponse,
-                    isFromUser = false
-                )
-                chatAdapter.addMessage(aiMessage)
-
-            } catch (e: Exception) {
-                // Remove typing indicator
-                val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "MAAI is typing...") {
-                    messages.removeAt(messages.size - 1)
-                    chatAdapter.messages.clear()
-                    chatAdapter.messages.addAll(messages)
-                    chatAdapter.notifyDataSetChanged()
-                }
-
-                // Add error message
-                val errorMessage = Message(
-                    text = "Sorry, I encountered an error. Please try again.",
-                    isFromUser = false
-                )
-                chatAdapter.addMessage(errorMessage)
-
-                Toast.makeText(this@WelcomeActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    private fun generateAIResponseForImage(userMessage: String, imageUri: Uri) {
-        lifecycleScope.launch {
-            try {
-                val aiResponse = geminiService.generateTextWithImage(userMessage, imageUri, this@WelcomeActivity)
-
-                // Remove typing indicator
-                val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "MAAI is analyzing the image and your question...") {
-                    messages.removeAt(messages.size - 1)
-                    chatAdapter.messages.clear()
-                    chatAdapter.messages.addAll(messages)
-                    chatAdapter.notifyDataSetChanged()
-                }
-
-                // Add AI response
-                val aiMessage = Message(
-                    text = aiResponse,
-                    isFromUser = false
-                )
-                chatAdapter.addMessage(aiMessage)
-
-            } catch (e: Exception) {
-                // Remove typing indicator
-                val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "MAAI is analyzing the image and your question...") {
-                    messages.removeAt(messages.size - 1)
-                    chatAdapter.messages.clear()
-                    chatAdapter.messages.addAll(messages)
-                    chatAdapter.notifyDataSetChanged()
-                }
-
-                // Add error message
-                val errorMessage = Message(
-                    text = "Sorry, I couldn't analyze the image. Please try again.",
-                    isFromUser = false
-                )
-                chatAdapter.addMessage(errorMessage)
-
-                Toast.makeText(this@WelcomeActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    private fun generateAIResponseForFile(userMessage: String, fileUri: Uri) {
-        lifecycleScope.launch {
-            try {
-                val aiResponse = geminiService.generateTextWithFile(userMessage, fileUri, this@WelcomeActivity)
-
-                // Remove typing indicator
-                val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "MAAI is analyzing the file and your question...") {
-                    messages.removeAt(messages.size - 1)
-                    chatAdapter.messages.clear()
-                    chatAdapter.messages.addAll(messages)
-                    chatAdapter.notifyDataSetChanged()
-                }
-
-                // Add AI response
-                val aiMessage = Message(
-                    text = aiResponse,
-                    isFromUser = false
-                )
-                chatAdapter.addMessage(aiMessage)
-
-            } catch (e: Exception) {
-                // Remove typing indicator
-                val messages = chatAdapter.messages.toMutableList()
-                if (messages.isNotEmpty() && messages.last().text == "MAAI is analyzing the file and your question...") {
-                    messages.removeAt(messages.size - 1)
-                    chatAdapter.messages.clear()
-                    chatAdapter.messages.addAll(messages)
-                    chatAdapter.notifyDataSetChanged()
-                }
-
-                // Add error message
-                val errorMessage = Message(
-                    text = "Sorry, I couldn't analyze the file. Please try again.",
-                    isFromUser = false
-                )
-                chatAdapter.addMessage(errorMessage)
-
-                Toast.makeText(this@WelcomeActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_welcome, menu)
@@ -526,12 +373,21 @@ class WelcomeActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_chat_history -> {
+                openChatHistory()
+                true
+            }
             R.id.action_sign_out -> {
                 signOut()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+    
+    private fun openChatHistory() {
+        val intent = Intent(this, ConversationListActivity::class.java)
+        startActivity(intent)
     }
 
     private fun signOut() {

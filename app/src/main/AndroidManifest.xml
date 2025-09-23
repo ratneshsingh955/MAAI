@@ -40,6 +40,11 @@
             android:exported="false"
             android:theme="@style/Theme.MyAi.NoActionBar" />
 
+        <activity
+            android:name=".ConversationListActivity"
+            android:exported="false"
+            android:parentActivityName=".WelcomeActivity" />
+
     </application>
 
 </manifest>
